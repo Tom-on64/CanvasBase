@@ -2,6 +2,8 @@
 
 This project contains a pretty decent setup for creating HTML Canvas applications in JavaScript.
 
+It is recommended you write your code in the src directory
+
 ## Files
 This project contains the index.html, app.js and main.js files.
 The index.html can be modified, however the canvas is by default setup to take up the full screen so you might experience overflow.
