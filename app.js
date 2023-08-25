@@ -1,25 +1,49 @@
-/*
-  This file sets up the update loop, i/o and the canvas display
-*/
-
 /** @type {HTMLCanvasElement} */
 import { start, update, fixedUpdate } from "./src/main.js";
 
-/** Some variables
+/** Canvas Element
  * @type {HTMLCanvasElement}
  */
 const canvas = document.getElementById("canvas");
+/** 2D Canvas Rendering Context */
 export const ctx = canvas.getContext("2d");
-export const display = { w: 0, h: 0 }
+/** Contains info about the display canvas  */
+export const display = {
+    /** The width of the display */
+    w: 0,
+    /** The height of the display */
+    h: 0,
+}
+
+/**
+ * Handles the Input
+ */
 export const input = {
+    /** Contains the key if it was pressed */
     keys: {},
-    mouse: { x: 0, y: 0, left: false, middle: false, right: false }
+    /** Contains properties for mouse input */
+    mouse: {
+        /** X position of the mouse */
+        x: 0,
+        /** Y position of the mouse */
+        y: 0,
+        /** Left mouse button */
+        left: false,
+        /** Middle mouse button */
+        middle: false,
+        /** Right mouse button */
+        right: false,
+    }
 }
 
 // Timing
 let timestamp = 0;
 let timer = 0;
-export let updateRate = 100;
+/** 
+ * The Update Rate In Miliseconds. 
+ * Changes how frequently the fixedUpdate() function gets called 
+ */
+export let updateRate = 50;
 
 const resizeCanvas = () => {
     canvas.width = window.innerWidth;
