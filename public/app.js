@@ -4,7 +4,7 @@ import { start, update, fixedUpdate } from "./src/main.js";
 /** Canvas Element
  * @type {HTMLCanvasElement}
  */
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("simCanvas");
 /** 2D Canvas Rendering Context */
 export const ctx = canvas.getContext("2d");
 /** Contains info about the display canvas  */
